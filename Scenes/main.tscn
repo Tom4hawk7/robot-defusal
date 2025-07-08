@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://du22ip3rvs07"]
+[gd_scene load_steps=3 format=3 uid="uid://du22ip3rvs07"]
+
+[ext_resource type="PackedScene" uid="uid://cr5ro7smonrxj" path="res://models/character.blend" id="1_jjgbg"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_7dm0k"]
 
@@ -7,3 +9,20 @@
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(24, 0, 0, 0, 0.5, 0, 0, 0, 24, 0, -0.25, 0)
 mesh = SubResource("BoxMesh_7dm0k")
+
+[node name="character" parent="." instance=ExtResource("1_jjgbg")]
+
+[node name="Camera" type="Camera3D" parent="."]
+transform = Transform3D(0.707107, -0.435338, 0.557208, 0, 0.788011, 0.615662, -0.707107, -0.435338, 0.557208, 10, 10, 10)
+projection = 1
+size = 10.0
+
+[node name="Test Light" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.15863, 7.34519, -6.67059)
+light_color = Color(0, 0, 1, 1)
+omni_range = 32.0597
+
+[node name="Test Light2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.86941, 14.6904, 10.1658)
+light_color = Color(0.625314, 0, 0.27366, 1)
+omni_range = 32.0597
