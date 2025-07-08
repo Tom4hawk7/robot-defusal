@@ -1,14 +1,32 @@
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [gd_scene load_steps=3 format=3 uid="uid://du22ip3rvs07"]
 
 [ext_resource type="PackedScene" uid="uid://cr5ro7smonrxj" path="res://models/character.blend" id="1_jjgbg"]
+=======
+[gd_scene load_steps=4 format=3 uid="uid://du22ip3rvs07"]
+
+[ext_resource type="PackedScene" uid="uid://crb0n218xfrgs" path="res://models/character.blend" id="1_jjgbg"]
+>>>>>>> Stashed changes
+=======
+[gd_scene load_steps=4 format=3 uid="uid://du22ip3rvs07"]
+
+[ext_resource type="PackedScene" uid="uid://crb0n218xfrgs" path="res://models/character.blend" id="1_jjgbg"]
+>>>>>>> Stashed changes
 
 [sub_resource type="BoxMesh" id="BoxMesh_7dm0k"]
 
+[sub_resource type="BoxMesh" id="BoxMesh_7u77a"]
+
 [node name="Main" type="Node3D"]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(24, 0, 0, 0, 0.5, 0, 0, 0, 24, 0, -0.25, 0)
+[node name="EnvironmentTest" type="Node" parent="."]
+
+[node name="Ground" type="MeshInstance3D" parent="EnvironmentTest"]
+transform = Transform3D(24, 0, 0, 0, 0.75, 0, 0, 0, 24, 0, -0.25, 0)
 mesh = SubResource("BoxMesh_7dm0k")
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
 [node name="character" parent="." instance=ExtResource("1_jjgbg")]
 
@@ -26,3 +44,18 @@ omni_range = 32.0597
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.86941, 14.6904, 10.1658)
 light_color = Color(0.625314, 0, 0.27366, 1)
 omni_range = 32.0597
+=======
+=======
+>>>>>>> Stashed changes
+skeleton = NodePath("../..")
+
+[node name="Wall" type="MeshInstance3D" parent="EnvironmentTest"]
+transform = Transform3D(0.53215, 0, 0, 0, 2.24707, 0, 0, 0, 15.2015, -3.466, 1.14905, -0.361864)
+mesh = SubResource("BoxMesh_7u77a")
+
+[node name="character" parent="EnvironmentTest" instance=ExtResource("1_jjgbg")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.047863, 0, 0.350069)
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
