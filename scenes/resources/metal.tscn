@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://b0wqg310ow1c"]
+
+[ext_resource type="Script" uid="uid://d0njuwanjx50o" path="res://scripts/resources/metal.gd" id="1_17684"]
+[ext_resource type="PackedScene" uid="uid://cq46koab8d010" path="res://scenes/interaction.tscn" id="2_k8a8f"]
+
+[sub_resource type="TubeTrailMesh" id="TubeTrailMesh_hwtv3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_17684"]
+size = Vector3(3, 0.5, 0.5)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_17684"]
+radius = 1.0
+
+[node name="Metal" type="Node3D"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+script = ExtResource("1_17684")
+
+[node name="Node3D" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(-2.18557e-08, -3, 0, 0.5, -1.31134e-07, 0, 0, 0, 0.5, 0, 0, 0)
+mesh = SubResource("TubeTrailMesh_hwtv3")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D"]
+shape = SubResource("BoxShape3D_17684")
+
+[node name="Interaction" parent="." instance=ExtResource("2_k8a8f")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interaction"]
+shape = SubResource("SphereShape3D_17684")

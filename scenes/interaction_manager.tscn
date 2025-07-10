@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0pxh1np5y2kd"]
+
+[ext_resource type="Script" path="res://scripts/interaction_manager.gd" id="1_rddhf"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_guivl"]
+radius = 2.5
+
+[node name="InteractionManager" type="Node3D"]
+script = ExtResource("1_rddhf")
+
+[node name="Range" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Range"]
+shape = SubResource("SphereShape3D_guivl")
+
+[connection signal="area_entered" from="Range" to="." method="_on_range_area_entered"]
+[connection signal="area_exited" from="Range" to="." method="_on_range_area_exited"]
