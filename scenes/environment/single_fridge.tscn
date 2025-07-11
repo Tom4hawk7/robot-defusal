@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhmdpkdihf3f4"]
+
+[ext_resource type="PackedScene" uid="uid://bekqa561unrfk" path="res://models/single_fridge.blend" id="1_18xmc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_aep6o"]
+size = Vector3(2.1, 5.71818, 2.1)
+
+[node name="Single Fridge" type="StaticBody3D"]
+
+[node name="Mesh" parent="." instance=ExtResource("1_18xmc")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.178613, 2.85909, -0.00441882)
+shape = SubResource("BoxShape3D_aep6o")

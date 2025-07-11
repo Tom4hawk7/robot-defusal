@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://dyks2efkx1mjt"]
+[gd_scene load_steps=9 format=3 uid="uid://dyks2efkx1mjt"]
 
 [ext_resource type="PackedScene" uid="uid://cawlhn01e5j3v" path="res://scenes/player.tscn" id="1_o5qli"]
 [ext_resource type="PackedScene" uid="uid://b0wqg310ow1c" path="res://scenes/resources/metal.tscn" id="2_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://bnhokjlxw2m13" path="res://models/single_shelf.blend" id="3_sugp2"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_o5qli"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -49,3 +50,6 @@ skeleton = NodePath("../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
 shape = SubResource("WorldBoundaryShape3D_0wfyh")
+
+[node name="single_shelf" parent="." instance=ExtResource("3_sugp2")]
+transform = Transform3D(-0.984808, 0, -0.173648, 0, 1, 0, 0.173648, 0, -0.984808, -7.51807, 0, -2.44357)
